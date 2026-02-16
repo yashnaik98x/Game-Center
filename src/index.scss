@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&display=swap');
+
+* {
+  font-family: Dosis; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background-image: url(https://wallpapercave.com/wp/wp7064196.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0px;
+}
+
+.back {
+  transition: 0.3s transform linear;
+  background-color: white;
+  padding: 0px 1rem;
+  display: block;
+  width: 60px;
+  height: 30px;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 3px;
+  img {
+    width: 30px;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: white;
+}
+::-webkit-scrollbar-thumb {
+  background: #5D3FD3;
+}
