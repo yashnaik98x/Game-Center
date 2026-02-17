@@ -1,7 +1,7 @@
 .home {
     margin: 3rem auto;
     background-color: #1A1B1C;
-    padding: 2.5rem 1.5rem; // Reduced horizontal padding for mobile breathing room
+    padding: 2.5rem;
     border-radius: 3px;
     box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.7);
     border: 5px solid;
@@ -11,84 +11,95 @@
     gap: 1.5rem;
     align-items: center;
     animation: shuffleBorderColor 10s linear infinite alternate-reverse;
-    width: min(400px, 95%); // Increased width percentage for very narrow screens
-
+    width: min(400px, 90%);
     h1 {
-        font-size: clamp(1.8rem, 8vw, 2.5rem); // Fluid font size
+        font-size: 2.5rem;
         font-weight: bold;
         color: white;
-        text-align: center;
     }
-
     h2 {
         color: white;
-        font-size: 1.2rem; // Base size for game titles
-        margin: 0;
-        text-align: center;
     }
-
     a {
         text-decoration: none;
-        width: 100%; // Ensures the link occupies the full width of the list
-
-        &:nth-child(2) .game {
-            background-color: #3fb5d3;
-            &:hover {
-                border-color: #3fb5d3;
-                background-color: transparent;
-                h2 { color: #3fb5d3; }
+        &:nth-child(2) {
+            .game {
+                background-color: #3fb5d3;
+                &:hover {
+                    border-color: #3fb5d3;
+                    background-color: transparent;
+                    h2 {
+                        color: #3fb5d3;
+                    }
+                }
             }
         }
-        &:nth-child(3) .game {
-            background-color: #d3443f;
-            &:hover {
-                border-color: #d3443f;
-                background-color: transparent;
-                h2 { color: #d3443f; }
+        &:nth-child(3) {
+            .game {
+                background-color: #d3443f;
+                &:hover {
+                    border-color: #d3443f;
+                    background-color: transparent;
+                    h2 {
+                        color: #d3443f;
+                    }
+                }
             }
         }
-        &:nth-child(4) .game {
-            background-color: #3fd36b;
-            &:hover {
-                border-color: #3fd36b;
-                background-color: transparent;
-                h2 { color: #3fd36b; }
+        &:nth-child(4) {
+            .game {
+                background-color: #3fd36b;
+                &:hover {
+                    border-color: #3fd36b;
+                    background-color: transparent;
+                    h2 {
+                        color: #3fd36b;
+                    }
+                }
             }
         }
     }
-
     .game-list {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        width: 100%; // Ensures the list fills the .home container
-
         .game {
             background-color: #5D3FD3;
-            min-height: 50px; // Changed from height: 50px to allow vertical growth
-            padding: 0.5rem 1rem; // Vertical padding for wrapped text
+            height: 50px;
+            padding: 0px 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 3px;
+            border-radius: 3px  ;
             border: 3px solid transparent;
             transition: 0.25s all ease;
-            box-sizing: border-box; // Ensures padding doesn't add to width
-
             &:hover {
                 border-color: #5D3FD3;
                 background-color: transparent;
-                h2 { color: #5D3FD3; }
+                h2 {
+                    color: #5D3FD3;
+                }
             }
         }
     }
 }
-
 @keyframes shuffleBorderColor {
-    0% { border-color: #5D3FD3; }
-    20% { border-color: #3fb5d3; }
-    40% { border-color: #3fd36b; }
-    60% { border-color: #bdd33f; }
-    80% { border-color: #d3983f; }
-    100% { border-color: #d3443f; }
+    0% {
+        border-color: #5D3FD3;
+    }
+    20% {
+        border-color: #3fb5d3;
+    }
+    40% {
+        border-color: #3fd36b;
+    }
+    60% {
+        border-color: #bdd33f;
+    }
+    80% {
+        border-color: #d3983f;
+    }
+    100% {
+        border-color: #d3443f;
+    }
 }
