@@ -1,0 +1,330 @@
+.mnc-container {
+    width: 800px;
+    margin: 3rem auto;
+
+    > h1 {
+        padding: 0.5rem 1rem 1rem 1rem;
+        background-color: #3fd36b;
+        border-radius: 3px;
+        color: #ffffff;
+        margin: auto;
+        width: 350px;
+        text-align: center;
+    }
+
+    .mnc {
+        width: 100%;
+        background-color: palegoldenrod;
+        outline: 10px solid black;
+        border-radius: 3px;
+        box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.7);
+        box-sizing: content-box;
+        height: 400px;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        overflow: hidden; /* Prevent overflow */
+
+        .terrain {
+            margin-top: auto;
+            display: flex;
+            flex: 1;
+            position: relative;
+            width: 100%;
+
+            .land {
+                position: relative;
+                margin-top: auto;
+                flex: 1;
+                background-color: rgb(131, 78, 29);
+                height: 225px;
+            }
+
+            .character-set-container {
+                position: absolute;
+                top: -50px;
+                display: flex;
+                gap: 1rem;
+                padding: 0px 1rem;
+
+                .character-set {
+                    gap: 0.5rem;
+                    display: flex;
+
+                    .character {
+                        width: 20px;
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .water {
+                position: relative;
+                margin-top: auto;
+                background-color: rgb(73, 166, 202);
+                height: 200px;
+                flex: 1.5;
+                z-index: 3;
+
+                .boat {
+                    position: absolute;
+                    width: 120px;
+                    top: -40px;
+                    z-index: -1;
+                    transition: 1s all linear;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    .character-set-container {
+                        z-index: 1;
+                        top: -25px;
+                        width: 100%;
+
+                        .character-set {
+                            flex: 1;
+
+                            &:nth-child(2) {
+                                .character {
+                                    margin-left: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .boat-left {
+                    transform: translateX(0%);
+                }
+
+                .boat-right {
+                    transform: translateX(185%);
+                }
+            }
+        }
+    }
+
+    .game-over {
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex-direction: column;
+    }
+
+    .game-over h1 {
+        font-size: 3rem;
+        color: white;
+    }
+
+    .game-over p {
+        display: flex;
+        align-items: baseline;
+        color: white;
+        gap: 1rem;
+    }
+
+    .game-over p span {
+        background-color: #3fd36b;
+        height: 30px;
+        padding: 0px 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        border-radius: 3px;
+    }
+
+    .game-over h2 {
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    .game-over button {
+        background-color: #3fd36b;
+        height: 30px;
+        padding: 0px 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3px;
+        border: 3px solid transparent;
+        transition: 0.25s all ease;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .game-over button:hover {
+        border-color: #3fd36b;
+        background-color: transparent;
+        color: #3fd36b;
+    }
+
+    .stats {
+        width: 350px;
+    }
+
+    .stats > *, .edit-puzzle button {
+        background-color: #3fd36b;
+    }
+}
+
+
+/* ================================= */
+/* 📱 MOBILE RESPONSIVE VERSION */
+/* ================================= */
+
+@media (max-width: 768px) {
+
+  .mnc-container {
+    width: 95%;
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+
+    > h1 {
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+
+    .mnc {
+      height: 280px;
+      outline: 5px solid black;
+      overflow: hidden; /* Critical fix */
+    }
+
+    .terrain {
+      width: 100%;
+
+      .land {
+        height: 140px;
+      }
+
+      .water {
+        height: 140px;
+
+        .boat {
+          width: 55px; /* Even smaller boat for mobile */
+          top: -22px;
+
+          .character-set-container {
+            top: -18px;
+            gap: 0.2rem;
+            padding: 0 0.2rem;
+          }
+        }
+
+        /* Fixed boat movement for mobile */
+        .boat-left {
+          transform: translateX(10px);
+        }
+
+        .boat-right {
+          transform: translateX(320%);
+        }
+      }
+
+      .character-set-container {
+        top: -30px;
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+        width: auto;
+        max-width: 100%;
+
+        .character-set {
+          gap: 0.25rem;
+
+          .character {
+            width: 16px; /* Smaller characters */
+            height: 35px;
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+
+    .stats {
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    .game-over h1 {
+      font-size: 2rem;
+    }
+
+    .game-over h2 {
+      font-size: 1.2rem;
+    }
+
+    .game-over p {
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .mnc-container {
+    
+    .mnc {
+      height: 240px;
+
+      .terrain {
+        .land {
+          height: 120px;
+        }
+
+        .water {
+          height: 120px;
+
+          .boat {
+            width: 50px;
+            top: -18px;
+          }
+        }
+
+        .character-set-container {
+          top: -25px;
+          gap: 0.3rem;
+          padding: 0 0.3rem;
+
+          .character-set {
+            gap: 0.2rem;
+
+            .character {
+              width: 14px;
+              height: 30px;
+            }
+          }
+        }
+      }
+    }
+
+    .game-over h1 {
+      font-size: 1.5rem;
+    }
+  }
+}
