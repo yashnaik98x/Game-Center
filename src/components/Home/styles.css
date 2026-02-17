@@ -1,0 +1,63 @@
+.home {
+    margin: 1rem;
+    background-color: #1A1B1C;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.7);
+    border: 5px solid #5D3FD3;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+.home h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #5D3FD3;
+    font-weight: bold;
+}
+.home a {
+    text-decoration: none;
+    width: 100%;
+}
+.home h2 {
+    color: white;
+    font-size: clamp(1rem, 4vw, 1.25rem);
+}
+.game-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+.game {
+    background-color: #5D3FD3;
+    height: 52px;
+    padding: 0px 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 3px solid transparent;
+    transition: 0.25s all ease;
+    cursor: pointer;
+    touch-action: manipulation;
+    user-select: none;
+}
+.game:hover, .game:active {
+    border-color: #5D3FD3;
+    background-color: transparent;
+}
+.game:hover h2, .game:active h2 {
+    color: #5D3FD3;
+}
+
+@media (max-width: 480px) {
+    .home {
+        margin: 1rem;
+        padding: 1.25rem;
+    }
+}

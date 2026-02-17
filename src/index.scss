@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&display=swap');
+
+* {
+  font-family: Dosis; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background-image: url(https://wallpapercave.com/wp/wp7064196.jpg);
+  /* Remove fixed attachment — it's GPU-expensive and broken on iOS Safari */
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0px;
+}
+
+.back {
+  transition: 0.3s transform linear;
+  background-color: white;
+  padding: 0px 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 30px;
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  border-radius: 3px;
+  z-index: 100;
+  touch-action: manipulation;
+  img {
+    width: 26px;
+    height: auto;
+  }
+  &:hover, &:active {
+    transform: scale(1.1);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: white;
+}
+::-webkit-scrollbar-thumb {
+  background: #5D3FD3;
+  border-radius: 3px;
+}

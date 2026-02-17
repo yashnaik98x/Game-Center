@@ -1,0 +1,38 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+.heading {
+	padding: 0.5rem;
+	background-color: #9A2A2A;
+	color: #FFFFFF;
+	margin: 0px;
+	border-radius: 5px;
+}
+.puzzle {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	gap: 0.25rem;
+	border: 5px solid #9A2A2A;
+	padding: 0.5rem 0.75rem;
+	border-radius: 5px;
+}
+.stats {
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+}
+.stats p {
+	font-weight: bold;
+}
+.stats button {
+	height: 35px;
+	border: 0px;
+	background-color: #DC143C;
+	color: #FFFFFF;
+	padding: 0px 1rem;
+	border-radius: 5px;
+}
